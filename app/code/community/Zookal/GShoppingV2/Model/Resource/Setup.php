@@ -31,4 +31,31 @@ class Zookal_GShoppingV2_Model_Resource_Setup extends Mage_Core_Model_Resource_S
         }
         return $_options;
     }
+
+    /**
+     * @return array
+     */
+    public function getTaxonomies2()
+    {
+        $taxonomyPath = [
+            Mage::getModuleDir('', 'Zookal_GShoppingV2'),
+            'data',
+            'gshoppingv2_setup',
+            'taxonomies',
+        ];
+        $taxonomyPath = implode(DS, $taxonomyPath) . DS;
+        $file        = $taxonomyPath . 'taxonomy-with-ids.de-DE.txt';
+        $_options     = [];
+        //foreach ($files as $file) {
+
+            $lang = 'de_DE';
+            if (!isset($_options[$lang])) {
+                $_options[$lang] = [];
+            }
+            $_options[$lang] = file($file);
+            unset($_options[$lang][0]); // unset first line which is a comment
+            array_map('trim', $_options[$lang]);
+       // }
+        return $_options;
+    }
 }
