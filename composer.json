@@ -1,5 +1,5 @@
 {
-    "name": "zookal/gshoppingv2",
+    "name": "mediasur/gshoppingv2",
     "description": "GoogleShopping API v2 module.",
     "type": "magento-module",
     "license": "OSL-3.0",
@@ -10,7 +10,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:Zookal/google-api-php-client.git"
+            "url": "git@github.com:MediasurLabs/GoogleShoppingApi.git"
         }
     ]
 }
