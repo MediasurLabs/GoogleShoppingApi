@@ -5,7 +5,7 @@
     "license": "OSL-3.0",
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "zookal/google_apiclient": "dev-master"
+        "zookal/google_apiclient": "1.1.2"
     },
     "repositories": [
         {
