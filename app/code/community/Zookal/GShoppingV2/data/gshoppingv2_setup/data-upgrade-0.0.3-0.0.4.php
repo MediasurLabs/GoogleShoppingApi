@@ -5,6 +5,14 @@ $installer = $this;
 /** @var Magento_Db_Adapter_Pdo_Mysql $connection */
 $connection = $installer->getConnection();
 
+$collection = Mage::getModel('gshoppingv2/taxonomy')
+    ->getCollection()
+    ->addFieldToFilter('lang', array('eq' => 'de_De'));
+
+foreach ($collection as $taxonomy) {
+    $taxonomy->delete();
+}
+    
 foreach ($installer->getTaxonomies2() as $lang => $taxonomies) {
     $data = [];
     foreach ($taxonomies as $taxonomy) {
